@@ -111,19 +111,49 @@ sales_year_state %>%
 bikeshop_orderlines_wrangled %>% write_xlsx("00_data/bike_orderlines.xlsx")
 bikeshop_orderlines_wrangled %>% write_csv("00_data/bike_orderlines.csv")
 bikeshop_orderlines_wrangled %>% write_rds("00_data/bike_orderlines.rds")
-# 6.2 Sales by Year and Category 2 ----
 
-# Step 1 - Manipulate
+Chapter : Data Acquisition
 
-# Step 2 - Visualize
+The code for the challenge in the chapter Data Acquisition is as follows
+
+library(rvest)
+library(stringi)
+library(xopen)
+library(jsonlite)
+library(tidyverse)
+library(glue)
+
+url <- "https://www.radon-bikes.de"
+xopen(url)
+html_home <- read_html(url)
+#Get url fpr eacf of the product categories
+bike_category_url_tbl <- html_home %>% html_nodes(".megamenu__item") %>% html_elements("a") %>% 
+  html_attr('href') %>% enframe(name = 'position',value = 'title') %>% mutate(
+    category_url=glue("https://www.radon-bikes.de{title}")
+  ) %>% filter(position<9)#remove accessories and gears using filter
 
 
 
-# 7.0 Writing Files ----
+#Get the Model Names
+get_bike_data <- function(link){
+  model_infor <- read_html(link) %>% html_nodes(".o-slick-slider__slide-content") %>% html_element("h2") %>% 
+    html_text() %>% enframe(name = "position",value = 'Model Name')
+  #Get the sizes
+  bike_sizes <- read_html(link) %>% html_nodes(".o-slick-slider__slide-content") %>% html_node('.m-bikegrid__size') %>% 
+    html_text() %>% str_extract("[0-9].+") %>% enframe(name = "position",value = "size")
+  #Get the prices
+  bike_prices <- read_html(link) %>% html_nodes(".m-serienpanel__price--active") %>% html_text() %>% 
+    str_remove("^ .$") %>%  stri_remove_empty() %>%  enframe(name='position',value = 'price')
+  #combine three using position
+   model_infor %>% left_join(bike_sizes) %>% left_join(bike_prices) %>%
+    filter(position!=23)
+}
 
-# 7.1 Excel ----
+category_1 <-  bike_category_url_tbl$category_url[2] # Get the URl for 1st category
+bike_model  <- get_bike_data(link = category_1)
 
-# 7.2 CSV ----
+bike_category_url_vector <- bike_category_url_tbl %>% pull(category_url) #Creates a vector with all the urls
+bike_data_lst <- map(bike_category_url_vector,get_bike_data) # repeats the function for each of the urls
+bike_data_tbl <- bind_rows(bike_data_lst) %>% rowid_to_column(var = "ID") #generates tibble with all the data
 
-# 7.3 RDS ----
 
