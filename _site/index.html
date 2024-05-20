@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Joschka Schwarz">
+<meta name="author" content="Puthen Veetil Keerthi">
 
 <title>MyLabJournal - My Lab Journal</title>
 <style>
@@ -18,7 +18,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -62,10 +62,13 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -80,51 +83,51 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">MyLabJournal</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-journal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-journal" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Journal</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">    
         <li>
-    <a class="dropdown-item" href="./content/01_journal/01_tidyverse.html">
+    <a class="dropdown-item" href="./content/01_journal/01_tidyverse.html" rel="" target="">
  <span class="dropdown-text">01 Tidyverse</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/01_journal/02_data_acquisition.html">
+    <a class="dropdown-item" href="./content/01_journal/02_data_acquisition.html" rel="" target="">
  <span class="dropdown-text">02 Data Acquisition</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/01_journal/03_data_wrangling.html">
+    <a class="dropdown-item" href="./content/01_journal/03_data_wrangling.html" rel="" target="">
  <span class="dropdown-text">03 Data Wrangling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./content/01_journal/04_data_visualization.html">
+    <a class="dropdown-item" href="./content/01_journal/04_data_visualization.html" rel="" target="">
  <span class="dropdown-text">04 Data Visualization</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./content/02_notes/05_class_notes.html">
+    <a class="nav-link" href="./content/02_notes/05_class_notes.html" rel="" target="">
  <span class="menu-text">Class notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content/03_other/06_links.html">
+    <a class="nav-link" href="./content/03_other/06_links.html" rel="" target="">
  <span class="menu-text">Links</span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -150,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Joschka Schwarz </p>
+             <p>Puthen Veetil Keerthi </p>
           </div>
   </div>
     
@@ -163,19 +166,91 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/logo/TIE_logo.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/logo/TIE_logo.svg" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<p><a href="assets/logo/logo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/logo/logo.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
 </figure>
 </div>
-<p>This is a template example for lab journaling. Students in the data science courses at the Institute of Entrepreneurship will use this template to learn R for business analytics. Students can replace this text as they wish.</p>
-<section id="how-to-use" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use">How to use</h2>
-<ol type="1">
-<li><p>Accept the assignment and get your own github repo.</p></li>
-<li><p>Blog/journal what you are doing in R, by editing the <code>.qmd</code> files.</p></li>
-<li><p>See the links page for lots of helpful links on learning R.</p></li>
-<li><p>Change everything to make it your own.</p></li>
-<li><p>Make sure to render you website everytime before you want to upload changes</p></li>
-</ol>
+<p>This is my lab journaling.</p>
+<p>This is an <code>.Rmd</code> file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.</p>
+<section id="my-first-post" class="level1">
+<h1>My first post</h1>
+<p>Chapter : Intro to tidyverse challenge solution After clearly following each instruction in the document of this chapter the solution to the challenge is # SALES ANALYSIS —- install.packages(“writexl”) # 1.0 Load libraries —- library(tidyverse) library(readxl) library(lubridate) library(ggplot2) library(writexl) # 2.0 Importing Files —- bikes &lt;- read_excel(“00_data/bikes.xlsx”) orderLines &lt;- read_excel(“00_data/orderlines.xlsx”) bikeshops &lt;- read_excel(“00_data/bikeshops.xlsx”) # 3.0 Examining Data —-</p>
+</section>
+<section id="joining-data--" class="level1">
+<h1>4.0 Joining Data —-</h1>
+<p>bikeshop_orderlines_joined_tbl &lt;- orderLines %&gt;% left_join(bikes,by=c(“product.id”=“bike.id”)) %&gt;% left_join(bikeshops, by=c(“customer.id”=“bikeshop.id”))</p>
+</section>
+<section id="wrangling-data--" class="level1">
+<h1>5.0 Wrangling Data —-</h1>
+<p>bikeshop_orderlines_wrangled &lt;- bikeshop_orderlines_joined_tbl %&gt;% separate(col = location, into = c(“City”,“State”), sep = “,”) %&gt;% mutate(total.price = price * quantity) %&gt;% select(-…1, -gender) %&gt;% select(-ends_with(“.id”)) %&gt;% bind_cols(bikeshop_orderlines_joined_tbl %&gt;% select(order.id)) %&gt;% select(order.id, contains(“order”), contains(“model”), State, price, quantity, total.price, everything()) %&gt;% rename(bikeshop = name) %&gt;% set_names(names(.) %&gt;% str_replace_all(“\.”, “_“))</p>
+</section>
+<section id="business-insights--" class="level1">
+<h1>6.0 Business Insights —-</h1>
+</section>
+<section id="sales-by-year--" class="level1">
+<h1>6.1 Sales by Year —-</h1>
+<p>salesByState_summarized_data= bikeshop_orderlines_wrangled %&gt;% select(State,total_price) %&gt;% group_by(State)%&gt;% summarise(sales=sum(total_price)) %&gt;% mutate(sales_text = scales::dollar (sales, big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“))</p>
+<p>salesByState_summarized_data%&gt;% ggplot(aes(x = State, y = sales)) + geom_col(fill = “#2DC6D6”) + geom_label(aes(label = sales_text),label.size = 0.01)+ geom_smooth(method = “lm”, se = FALSE) + scale_y_continuous(labels = scales::dollar_format(big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“)) + labs(title =”Revenue by State”, x = ““, y =”Revenue”) + theme(axis.text.x = element_text(angle = 45, hjust = 1))</p>
+</section>
+<section id="step-1---manipulate" class="level1">
+<h1>Step 1 - Manipulate</h1>
+<p>sales_year_state &lt;- bikeshop_orderlines_wrangled %&gt;% select(order_date,State,total_price) %&gt;% mutate(yr=year(order_date)) %&gt;% group_by(yr,State) %&gt;% summarise(sales= sum(total_price)) %&gt;% mutate( sales_text = scales::dollar(sales, big.mark= “.”,decimal.mark = “,”, prefix = ““, suffix =” €“))</p>
+</section>
+<section id="step-2---visualize" class="level1">
+<h1>Step 2 - Visualize</h1>
+<p>sales_year_state %&gt;%</p>
+<p># Set up x, y, fill ggplot(aes(x = yr, y = sales, fill = State)) +</p>
+<p># Geometries geom_col() + # Run up to here to get a stacked bar plot</p>
+<p># Facet facet_wrap(~ State) +</p>
+<p># Formatting scale_y_continuous(labels = scales::dollar_format(big.mark = “.”, decimal.mark = “,”, prefix = ““, suffix =” €“)) + labs( title =”Revenue by year and State”, fill = “Main category” # Changes the legend name ) + theme(axis.text.x = element_text(angle = 45, hjust = 1,size = 7))</p>
+<p>bikeshop_orderlines_wrangled %&gt;% write_xlsx(“00_data/bike_orderlines.xlsx”) bikeshop_orderlines_wrangled %&gt;% write_csv(“00_data/bike_orderlines.csv”) bikeshop_orderlines_wrangled %&gt;% write_rds(“00_data/bike_orderlines.rds”)</p>
+<p>Chapter : Data Acquisition</p>
+<p>The code for the challenge in the chapter Data Acquisition is as follows</p>
+<p>library(rvest) library(stringi) library(xopen) library(jsonlite) library(tidyverse) library(glue)</p>
+<p>url &lt;- “https://www.radon-bikes.de” xopen(url) html_home &lt;- read_html(url) #Get url fpr eacf of the product categories bike_category_url_tbl &lt;- html_home %&gt;% html_nodes(“.megamenu__item”) %&gt;% html_elements(“a”) %&gt;% html_attr(‘href’) %&gt;% enframe(name = ‘position’,value = ‘title’) %&gt;% mutate( category_url=glue(“https://www.radon-bikes.de{title}”) ) %&gt;% filter(position&lt;9)#remove accessories and gears using filter</p>
+<p>#Get the Model Names get_bike_data &lt;- function(link){ model_infor &lt;- read_html(link) %&gt;% html_nodes(“.o-slick-slider__slide-content”) %&gt;% html_element(“h2”) %&gt;% html_text() %&gt;% enframe(name = “position”,value = ‘Model Name’) #Get the sizes bike_sizes &lt;- read_html(link) %&gt;% html_nodes(“.o-slick-slider__slide-content”) %&gt;% html_node(’.m-bikegrid__size’) %&gt;% html_text() %&gt;% str_extract(“[0-9].+”) %&gt;% enframe(name = “position”,value = “size”) #Get the prices bike_prices &lt;- read_html(link) %&gt;% html_nodes(“.m-serienpanel__price–active”) %&gt;% html_text() %&gt;% str_remove(“^ .$”) %&gt;% stri_remove_empty() %&gt;% enframe(name=‘position’,value = ‘price’) #combine three using position model_infor %&gt;% left_join(bike_sizes) %&gt;% left_join(bike_prices) %&gt;% filter(position!=23) }</p>
+<p>category_1 &lt;- bike_category_url_tbl$category_url[2] # Get the URl for 1st category bike_model &lt;- get_bike_data(link = category_1)</p>
+<p>bike_category_url_vector &lt;- bike_category_url_tbl %&gt;% pull(category_url) #Creates a vector with all the urls bike_data_lst &lt;- map(bike_category_url_vector,get_bike_data) # repeats the function for each of the urls bike_data_tbl &lt;- bind_rows(bike_data_lst) %&gt;% rowid_to_column(var = “ID”) #generates tibble with all the data</p>
+<p>Chapter : Data Wrangling</p>
+<p>The code for the challenge of the chapter Data Wrangling (the reduced data set is been used) is as follows:</p>
+<p>#load the tables</p>
+<p>library(tidyverse) library(vroom) library(lubridate) library(data.table)</p>
+</section>
+<section id="load-the-column-list" class="level1">
+<h1>load the column list</h1>
+<p>col_types_patent &lt;- list( id = col_character(), date = col_date(“%Y-%m-%d”), num_claims = col_double() )</p>
+<p>col_types_patent_asignee &lt;- list( patent_id = col_character(), assignee_id = col_character() )</p>
+<p>col_types_asignee &lt;- list( id = col_character(), type = col_double(), organization = col_character() )</p>
+<p>col_types_uspc &lt;- list( patent_id = col_character(), mainclass_id = col_character(), sequence = col_double() )</p>
+<p>#Acquire data from the files patent_tbl &lt;- vroom( file = “Patent_data_reduced/patent.tsv”, delim = “, col_types = col_types_patent, na = c(”“,”NA”, “NULL”) )</p>
+<p>patent_asignee_tbl &lt;- vroom( file = “Patent_data_reduced/patent_assignee.tsv”, delim = “, col_types = col_types_patent_asignee, na = c(”“,”NA”, “NULL”) )</p>
+<p>asignee_tbl &lt;- vroom( file = “Patent_data_reduced/assignee.tsv”, delim = “, col_types = col_types_asignee, na = c(”“,”NA”, “NULL”) )</p>
+<p>uspc_tbl &lt;- vroom( file = “Patent_data_reduced/uspc.tsv”, delim = “, col_types = col_types_uspc, na = c(”“,”NA”, “NULL”) )</p>
+<p>#Convert the acquired data to data table setDT(patent_tbl) setDT(patent_asignee_tbl) setDT(asignee_tbl) setDT(uspc_tbl)</p>
+<p>#merge asignee data combined_asignee_data &lt;- merge(x = patent_asignee_tbl, y = asignee_tbl, by.x = “assignee_id”, by.y = “id”, all.x = TRUE, all.y = FALSE)</p>
+<p>#Top 10 US Orgs with most patents #type 2 is for US Companies combined_asignee_data[type == 2, .N, by = organization][order( N, decreasing = TRUE)] %&gt;% slice(1:10)</p>
+<p>#combine patent data with assignee_tbl data and patent_asignee_tbl combined_patent_data &lt;- merge(x = patent_tbl, y = combined_asignee_data, by.x = “id”, by.y = “patent_id”, all.x = TRUE, all.y = FALSE) %&gt;% filter(!is.na(assignee_id))</p>
+<p>setnames(combined_patent_data, “date”, “GrantDate”)</p>
+<p>#top 10 US companies with most new patents in August 2014 #US Orgs with most patents in Aug 2014 MostPatentsAugust14 &lt;- combined_patent_data[month(GrantDate) == 8 &amp; type == 2, .N, by = organization][order( N, decreasing = TRUE)] %&gt;% head(1)</p>
+<p>T10_Latest_patents &lt;- combined_patent_data[month(GrantDate) == 8 &amp; type == 2, .N, by = .(GrantDate, organization)][order(GrantDate, N, decreasing = TRUE)] %&gt;% slice(1:10)</p>
+<p>#combine uspc_tbl with asignee_tbl and patent_asignee_tbl uspc_combined &lt;- merge(x = uspc_tbl, y = combined_asignee_data, by = “patent_id”, all.x = TRUE, all.y = FALSE) %&gt;% filter(!is.na(assignee_id))</p>
+<p>#most innovative tech category is the class with most patents most_innovative &lt;- uspc_combined[,.N, by = mainclass_id][order(N, decreasing = TRUE)] %&gt;% head(1)</p>
+<p>#top 10 orgs with the most patents top10Worldwide &lt;- uspc_combined[type == 3 | type == 2, .N, by = .(organization)][order(N, decreasing = TRUE)] %&gt;% slice(1:10)</p>
+<p>#vector of the top 10 orgs top10orgs &lt;- top10Worldwide %&gt;% pull(organization)</p>
+<p>#the classes of the top 10 orgs uspc_combined[organization %in% top10orgs, .N, by = mainclass_id][order(N, decreasing = TRUE)] %&gt;% slice(1:5)</p>
+<p>Chapter : Data Visualization</p>
+<p>The code for challenges one and two for the chapter Data Visualization is as follows</p>
+<p>library(tidyverse) library(lubridate) library(glue) install.packages(“ggrepel”) library(ggrepel) covid_data_tbl &lt;- read_csv(“https://covid.ourworldindata.org/data/owid-covid-data.csv”) countries &lt;- c(“Germany”,“United Kingdom”,“France”,“Spain”,“United States”,“Europe”)</p>
+<p>#wrangling cumulative_cases_tbl &lt;- covid_data_tbl %&gt;% select(location,date,total_cases) %&gt;% filter(location %in% countries) %&gt;% filter(!is.na(total_cases)) #%&gt;% # as_factor(location) %&gt;% fct_reorder(total_cases) #%&gt;% #mutate(new_date=floor_date(date(date),unit = “months”)) %&gt;% # group_by(location) %&gt;% # summarise(cum_cases=sum(new_cases)) %&gt;% # mutate(month_year=glue(‘{format(new_date,“%B %Y”)}’)) #ungroup() #visualization cumulative_cases_tbl<span class="math inline">\(label &lt;- NA cumulative_cases_tbl\)</span>label[which((cumulative_cases_tbl<span class="math inline">\(date ==  max(cumulative_cases_tbl\)</span>date)))] &lt;- cumulative_cases_tbl<span class="math inline">\(total_cases[which(cumulative_cases_tbl\)</span>date== max(cumulative_cases_tbl$date))] cumulative_cases_tbl %&gt;% ggplot(aes(date,total_cases,color=location)) + geom_line(size =1)+ scale_y_continuous(labels = scales::label_number(scale=1e-6, suffix=“M”))+ geom_label_repel(aes(label = label))+ scale_color_discrete(type = c(“#E69F00”, “#56B4E9”, “#009E73”, “#F0E442”, “#0072B2”, “#D55E00”, “#CC79A7”))</p>
+</section>
+<section id="case-2" class="level1">
+<h1>Case 2</h1>
+<p>#Lat and Longitude Data for world world &lt;- map_data(“world”)</p>
+<p>#Calculate moratality rate mortality_rate_tbl &lt;- covid_data_tbl %&gt;% select(location, date,new_deaths,population) %&gt;%filter(!is.na(new_deaths)) %&gt;% filter(date&lt;=as.Date(“2021-04-16”)) %&gt;% mutate(mort_rate=new_deaths/population) %&gt;% group_by(location) %&gt;% summarise(mortality_rate=sum(mort_rate)) %&gt;% arrange(desc(mortality_rate))%&gt;% mutate(location = case_when(</p>
+<pre><code>location == "United Kingdom" ~ "UK",
+location == "United States" ~ "USA",
+location == "Democratic Republic of Congo" ~ "Democratic Republic of the Congo",
+TRUE ~ location</code></pre>
+<p>)) mapped_data &lt;- world %&gt;% left_join(mortality_rate_tbl,by=c(“region”=“location”)) mapped_data %&gt;% ggplot(aes(long,lat, mortality_rate))+ geom_map(aes(map_id=region, fill = mortality_rate ),map = mapped_data) + scale_fill_continuous(low=“red”, high=“black”, labels = scales::label_number(scale = 1e2, prefix = ““, suffix =”%“))</p>
 
 
 </section>
@@ -323,9 +398,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -390,6 +479,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -430,7 +605,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});</script>
 
 
 
